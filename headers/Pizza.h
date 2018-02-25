@@ -23,6 +23,18 @@ public:
 		hotDegree = hd;
 	}
 
+	FILLING getFilling() {
+		return filling;
+	}
+
+	SPICE getSpice() {
+		return spice;
+	}
+
+	HOT_DEGREE getHotDegree() {
+		return hotDegree;
+	}
+
 private:
 	FILLING filling;
 	SPICE spice;

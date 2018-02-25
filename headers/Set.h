@@ -14,6 +14,14 @@ public:
 		drinks.push_back(d);
 	}
 
+	std::vector<Pizza*> getPizzas() {
+		return pizzas;
+	}
+	
+	std::vector<Drink*> getDrinks() {
+		return drinks;
+	}
+
 private:
 	std::vector<Pizza*> pizzas;
 	std::vector<Drink*> drinks;

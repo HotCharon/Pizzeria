@@ -9,17 +9,20 @@ class Pizzeria {
 public:
 	enum MenuItem{ITALIAN_SET, RUSSIAN_SET, MEXICAN_SET};
 
-	Set* MakeASetOrder(MenuItem mi, int countOfPizzas, int countOfDrinks) {
+	Set* MakeASetOrder(const MenuItem& mi, int countOfPizzas, int countOfDrinks) {
 		switch (mi) {
 			case Pizzeria::ITALIAN_SET:
-				kitchen.CreateSet(italianChef);
+				return kitchen.CreateSet(italianChef, countOfPizzas, countOfDrinks);
 				break;
+
 			case Pizzeria::RUSSIAN_SET:
-				kitchen.CreateSet(russianChef);
+				return kitchen.CreateSet(russianChef, countOfPizzas, countOfDrinks);
 				break;
+
 			case Pizzeria::MEXICAN_SET:
-				kitchen.CreateSet(mexicanChef);
+				return kitchen.CreateSet(mexicanChef, countOfPizzas, countOfDrinks);
 				break;
+
 			default:
 				break;
 		}
@@ -28,7 +31,7 @@ public:
 private:
 	Kitchen kitchen;
 	
-	SetChef italianChef;
-	SetChef russianChef;
-	SetChef mexicanChef;
+	ItalianSetChef italianChef;
+	RussianSetChef russianChef;
+	MexicanSetChef mexicanChef;
 };
