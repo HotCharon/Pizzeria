@@ -1,9 +1,11 @@
+#pragma once
+
 #include "Includes.h"
 
 class Pizza {
 public:
 	enum FILLING { MEAT, MUSHROOMS, SALAMI };
-	enum SPICE { KETCHUP, DILL, SHILI_SAUCE };
+	enum SPICE { KETCHUP, DILL, ÑHILI_SAUCE };
 	enum HOT_DEGREE { LOW, MID, HIGH };
 
 	void setFilling(FILLING f) {
@@ -21,6 +23,7 @@ public:
 		hotDegree = hd;
 	}
 
+private:
 	FILLING filling;
 	SPICE spice;
 	HOT_DEGREE hotDegree;
