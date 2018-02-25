@@ -14,19 +14,57 @@ public:
 class ItalianSetChef : public SetChef {
 public:
 	virtual Pizza* CreatePizza() {
-		Pizza* pizza = new Pizza;
+		pizzaRecipe.CreatePizza();
 
-		
+		pizzaRecipe.BuildFilling();
+		pizzaRecipe.BuildSpice();
+		pizzaRecipe.BuildHotDegree();
+
+		return pizzaRecipe.GetPizza().get();
+	}
+
+	virtual Drink* CreateDrink() {
+		return new Wine;
 	}
 
 private:
-	
+	ItalianPizzaRecipe pizzaRecipe;
 };
 
 class RussianSetChef : public SetChef {
+	virtual Pizza* CreatePizza() {
+		pizzaRecipe.CreatePizza();
 
+		pizzaRecipe.BuildFilling();
+		pizzaRecipe.BuildSpice();
+		pizzaRecipe.BuildHotDegree();
+
+		return pizzaRecipe.GetPizza().get();
+	}
+
+	virtual Drink* CreateDrink() {
+		return new Kvass;
+	}
+
+private:
+	RussianPizzaRecipe pizzaRecipe;
 };
 
 class MexicanSetChef : public SetChef {
+	virtual Pizza* CreatePizza() {
+		pizzaRecipe.CreatePizza();
 
+		pizzaRecipe.BuildFilling();
+		pizzaRecipe.BuildSpice();
+		pizzaRecipe.BuildHotDegree();
+
+		return pizzaRecipe.GetPizza().get();
+	}
+
+	virtual Drink* CreateDrink() {
+		return new Mescal;
+	}
+
+private:
+	MexicanPizzaRecipe pizzaRecipe;
 };

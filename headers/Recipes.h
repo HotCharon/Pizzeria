@@ -23,6 +23,7 @@ protected:
 };
 
 class ItalianPizzaRecipe : public IPizzaRecipe {
+public:
 	void BuildFilling() {
 		m_pizza->setFilling(Pizza::MEAT);
 	}
@@ -37,6 +38,7 @@ class ItalianPizzaRecipe : public IPizzaRecipe {
 };
 
 class RussianPizzaRecipe : public IPizzaRecipe {
+public:
 	void BuildFilling() {
 		m_pizza->setFilling(Pizza::MUSHROOMS);
 	}
@@ -51,6 +53,7 @@ class RussianPizzaRecipe : public IPizzaRecipe {
 };
 
 class MexicanPizzaRecipe : public IPizzaRecipe {
+public:
 	void BuildFilling() {
 		m_pizza->setFilling(Pizza::SALAMI);
 	}
