@@ -1,5 +1,6 @@
 #include "../headers/Includes.h"
 #include "../headers/Pizzeria.h"
+#include "../gtests.h"
 
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
@@ -7,9 +8,8 @@
 
 
 //int argc, char* argv[]
-int main() {
+int main(int argc, char* argv[]) {
 	::testing::InitGoogleTest(&argc, argv);
 	srand(time(NULL));
-    return 0;
 	return RUN_ALL_TESTS();
 }

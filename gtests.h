@@ -4,7 +4,7 @@
 #include <ctime>
 
 
-void GeneralTest() {
+TEST (PizzeriaTest, GeneralTest) {
 	Pizzeria piz;
 
 	const long long countOfTests = 10000000;
@@ -15,23 +15,25 @@ void GeneralTest() {
 		int typeOfSet = rand() % 3;
 
 		Set* set;
+        std::vector<Pizza*> pizzas;
+        std::vector<Drink*> drinks;
 
 		switch (typeOfSet) {
 			case 0:
 			{
 				set = piz.MakeASetOrder(Pizzeria::ITALIAN_SET, countOfPizzas, countOfDrinks);
 
-				std::vector<Pizza*> pizzas = set->getPizzas();
-				std::vector<Drink*> drinks = set->getDrinks();
+				pizzas = set->getPizzas();
+				drinks = set->getDrinks();
 
 				for (size_t i = 0; i < countOfPizzas; i++) {
-					ASSERT_TRUE(pizzas[i].getFilling() == Pizza::MEAT);
-					ASSERT_TRUE(pizzas[i].getSpice() == Pizza::KETCHUP);
-					ASSERT_TRUE(pizzas[i].getHotDegree() == Pizza::MID);
+					ASSERT_TRUE(pizzas[i]->getFilling() == Pizza::MEAT);
+					ASSERT_TRUE(pizzas[i]->getSpice() == Pizza::KETCHUP);
+					ASSERT_TRUE(pizzas[i]->getHotDegree() == Pizza::MID);
 				}
 
 				for (size_t i = 0; i < countOfDrinks; i++) {
-					ASSERT_TRUE(typeid(drinks[i]) == Wine);
+					ASSERT_TRUE(typeid(typeof(drinks[i])) == typeid(Wine));
 				}
 
 				break;
@@ -41,17 +43,17 @@ void GeneralTest() {
 			{
 				set = piz.MakeASetOrder(Pizzeria::RUSSIAN_SET, countOfPizzas, countOfDrinks);
 
-				std::vector<Pizza*> pizzas = set->getPizzas();
-				std::vector<Drink*> drinks = set->getDrinks();
+				pizzas = set->getPizzas();
+				drinks = set->getDrinks();
 
 				for (size_t i = 0; i < countOfPizzas; i++) {
-					ASSERT_TRUE(pizzas[i].getFilling() == Pizza::MUSHROOMS);
-					ASSERT_TRUE(pizzas[i].getSpice() == Pizza::DILL);
-					ASSERT_TRUE(pizzas[i].getHotDegree() == Pizza::LOW);
+					ASSERT_TRUE(pizzas[i]->getFilling() == Pizza::MUSHROOMS);
+					ASSERT_TRUE(pizzas[i]->getSpice() == Pizza::DILL);
+					ASSERT_TRUE(pizzas[i]->getHotDegree() == Pizza::LOW);
 				}
 
 				for (size_t i = 0; i < countOfDrinks; i++) {
-					ASSERT_TRUE(typeid(drinks[i]) == Kvass);
+					ASSERT_TRUE(typeid(typeof(drinks[i])) == typeid(Kvass));
 				}
 
 				break;
@@ -61,17 +63,17 @@ void GeneralTest() {
 			{
 				set = piz.MakeASetOrder(Pizzeria::MEXICAN_SET, countOfPizzas, countOfDrinks);
 
-				std::vector<Pizza*> pizzas = set->getPizzas();
-				std::vector<Drink*> drinks = set->getDrinks();
+				pizzas = set->getPizzas();
+				drinks = set->getDrinks();
 
 				for (size_t i = 0; i < countOfPizzas; i++) {
-					ASSERT_TRUE(pizzas[i].getFilling() == Pizza::SALAMI);
-					ASSERT_TRUE(pizzas[i].getSpice() == Pizza::ÑHILI_SAUCE);
-					ASSERT_TRUE(pizzas[i].getHotDegree() == Pizza::HIGH);
+					ASSERT_TRUE(pizzas[i]->getFilling() == Pizza::SALAMI);
+					ASSERT_TRUE(pizzas[i]->getSpice() == Pizza::CHILI_SAUCE);
+					ASSERT_TRUE(pizzas[i]->getHotDegree() == Pizza::HIGH);
 				}
 
 				for (size_t i = 0; i < countOfDrinks; i++) {
-					ASSERT_TRUE(typeid(drinks[i]) == Mescal);
+					ASSERT_TRUE(typeid(typeof(drinks[i])) == typeid(Mescal));
 				}
 
 				break;

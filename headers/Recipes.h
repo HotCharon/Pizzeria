@@ -59,7 +59,7 @@ public:
 	}
 
 	void BuildSpice() {
-		m_pizza->setSpice(Pizza::ÑHILI_SAUCE);
+		m_pizza->setSpice(Pizza::CHILI_SAUCE);
 	}
 
 	void BuildHotDegree() {

@@ -5,7 +5,7 @@
 class Pizza {
 public:
 	enum FILLING { MEAT, MUSHROOMS, SALAMI };
-	enum SPICE { KETCHUP, DILL, ÑHILI_SAUCE };
+	enum SPICE { KETCHUP, DILL, CHILI_SAUCE };
 	enum HOT_DEGREE { LOW, MID, HIGH };
 
 	void setFilling(FILLING f) {
