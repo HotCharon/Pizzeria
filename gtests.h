@@ -7,10 +7,10 @@
 TEST (PizzeriaTest, GeneralTest) {
 	Pizzeria piz;
 
-	const long long countOfTests = 10000000;
+	const long long countOfTests = 1000;
 	for (size_t i = 0; i < countOfTests; i++) {
-		int countOfPizzas = rand() % 1000000;
-		int countOfDrinks = rand() % 1000000;
+		int countOfPizzas = rand() % 1000;
+		int countOfDrinks = rand() % 1000;
 
 		int typeOfSet = rand() % 3;
 
@@ -33,7 +33,7 @@ TEST (PizzeriaTest, GeneralTest) {
 				}
 
 				for (size_t i = 0; i < countOfDrinks; i++) {
-					ASSERT_TRUE(typeid(typeof(drinks[i])) == typeid(Wine));
+					ASSERT_TRUE(typeid(*drinks[i]) == typeid(Wine));
 				}
 
 				break;
@@ -53,7 +53,7 @@ TEST (PizzeriaTest, GeneralTest) {
 				}
 
 				for (size_t i = 0; i < countOfDrinks; i++) {
-					ASSERT_TRUE(typeid(typeof(drinks[i])) == typeid(Kvass));
+					ASSERT_TRUE(typeid(*drinks[i]) == typeid(Kvass));
 				}
 
 				break;
@@ -73,7 +73,7 @@ TEST (PizzeriaTest, GeneralTest) {
 				}
 
 				for (size_t i = 0; i < countOfDrinks; i++) {
-					ASSERT_TRUE(typeid(typeof(drinks[i])) == typeid(Mescal));
+					ASSERT_TRUE(typeid(*drinks[i]) == typeid(Mescal));
 				}
 
 				break;
@@ -84,8 +84,6 @@ TEST (PizzeriaTest, GeneralTest) {
 		}
 
 		ASSERT_TRUE(pizzas.size() == countOfPizzas);
-		ASSERT_TRUE(pizzas.size() == countOfDrinks);
-
-
+		ASSERT_TRUE(drinks.size() == countOfDrinks);
 	}
 }

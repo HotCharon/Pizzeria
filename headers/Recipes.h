@@ -11,15 +11,15 @@ public:
 	virtual void BuildHotDegree() = 0;
 
 	void CreatePizza() {
-		m_pizza.reset(new Pizza);
+		m_pizza = new Pizza;
 	}
 
-	std::shared_ptr<Pizza> GetPizza() {
+	Pizza* GetPizza() {
 		return m_pizza;
 	}
 
 protected:
-	std::shared_ptr<Pizza> m_pizza;
+	Pizza* m_pizza;
 };
 
 class ItalianPizzaRecipe : public IPizzaRecipe {

@@ -20,7 +20,7 @@ public:
 		pizzaRecipe.BuildSpice();
 		pizzaRecipe.BuildHotDegree();
 
-		return pizzaRecipe.GetPizza().get();
+		return pizzaRecipe.GetPizza();
 	}
 
 	virtual Drink* CreateDrink() {
@@ -39,7 +39,7 @@ class RussianSetChef : public SetChef {
 		pizzaRecipe.BuildSpice();
 		pizzaRecipe.BuildHotDegree();
 
-		return pizzaRecipe.GetPizza().get();
+		return pizzaRecipe.GetPizza();
 	}
 
 	virtual Drink* CreateDrink() {
@@ -58,7 +58,7 @@ class MexicanSetChef : public SetChef {
 		pizzaRecipe.BuildSpice();
 		pizzaRecipe.BuildHotDegree();
 
-		return pizzaRecipe.GetPizza().get();
+		return pizzaRecipe.GetPizza();
 	}
 
 	virtual Drink* CreateDrink() {
